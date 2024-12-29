@@ -1,6 +1,8 @@
 package com.example.pertemuan12.viewmodel
 
 import android.net.http.HttpException
+import android.os.Build
+import androidx.annotation.RequiresExtension
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -17,6 +19,7 @@ sealed class HomeUiState {
     object Error : HomeUiState()
     object Loading : HomeUiState()
 }
+@RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 class HomeViewModel(private val mhs:
                     MahasiswaRepository
 ) : ViewModel() {
@@ -26,6 +29,7 @@ class HomeViewModel(private val mhs:
     init {
         getMhs()
     }
+    @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     fun getMhs() {
         viewModelScope.
         launch {
@@ -39,3 +43,19 @@ class HomeViewModel(private val mhs:
             }
         }
     }
+
+    @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
+    fun deleteMhs(
+        nim: String) {
+        viewModelScope.
+        launch {
+            try {
+                mhs.deleteMahasiswa(nim)
+            } catch (e: IOException){
+                HomeUiState.Error
+            } catch (e:HttpException){
+                HomeUiState.Error
+            }
+        }
+    }
+}
