@@ -10,3 +10,16 @@ class InsertViewModel(private val mhs:
         uiState = InsertUiState(insertUiEvent =
         insertUiEvent)
     }
+
+    suspend fun insertMhs() {
+        viewModelScope.
+        launch {
+            try {
+                mhs.insertMahasiswa(uiState.insertUiEvent.
+                toMhs())
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
+        }
+    }
+}
