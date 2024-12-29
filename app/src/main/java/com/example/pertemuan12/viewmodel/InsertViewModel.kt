@@ -23,3 +23,6 @@ class InsertViewModel(private val mhs:
         }
     }
 }
+data class InsertUiState(
+    val insertUiEvent: InsertUiEvent = InsertUiEvent()
+)
