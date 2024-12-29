@@ -1,5 +1,7 @@
 package com.example.pertemuan12.viewmodel
 
+import com.example.pertemuan12.entity.Mahasiswa
+
 class InsertViewModel(private val mhs:
                       MahasiswaRepository) : ViewModel() {
     var uiState by
@@ -34,4 +36,13 @@ data class InsertUiEvent(
     val jenisKelamin: String = "",
     val kelas: String = "",
     val angkatan: String = ""
+)
+
+fun InsertUiEvent.toMhs(): Mahasiswa = Mahasiswa(
+    nim = nim,
+    nama = nama,
+    alamat = alamat,
+    jenisKelamin = jenisKelamin,
+    kelas = kelas,
+    angkatan = angkatan
 )
