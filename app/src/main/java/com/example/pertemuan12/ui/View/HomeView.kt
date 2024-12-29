@@ -147,3 +147,13 @@ fun OnError(
         }
     }
 }
+
+@Composable
+fun MhsLayout(
+    mahasiswa:
+    List<Mahasiswa>,
+    modifier:
+    Modifier = Modifier,
+    onDetailClick: (Mahasiswa) -> Unit,
+    onDeleteClick: (Mahasiswa) -> Unit = {}
+)
