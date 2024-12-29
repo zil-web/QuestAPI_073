@@ -43,4 +43,17 @@ fun HomeScreen(
                 Add, contentDescription = "Add Kontak")
             }
         },
-    )
+    ){
+            innerPadding ->
+        HomeStatus(
+            homeUiState = viewModel.mhsUIState,
+            retryAction = { viewModel.getMhs() }, modifier = Modifier.
+            padding(
+                innerPadding),
+            onDetailClick = onDetailClick, onDeleteClick = {
+                viewModel.deleteMhs(it.nim )
+                viewModel.getMhs()
+            }
+        )
+    }
+}
