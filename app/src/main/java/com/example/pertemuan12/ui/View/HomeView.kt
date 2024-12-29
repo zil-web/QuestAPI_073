@@ -182,3 +182,11 @@ fun MhsLayout(
         }
     }
 }
+
+@Composable
+fun MhsCard(
+    mahasiswa: Mahasiswa,
+    modifier:
+    Modifier = Modifier,
+    onDeleteClick: (Mahasiswa) -> Unit = {}
+)
