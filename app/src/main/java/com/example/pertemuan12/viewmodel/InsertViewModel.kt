@@ -1,6 +1,8 @@
 package com.example.pertemuan12.viewmodel
 
+import androidx.lifecycle.ViewModel
 import com.example.pertemuan12.entity.Mahasiswa
+import com.example.pertemuan12.repository.MahasiswaRepository
 
 class InsertViewModel(private val mhs:
                       MahasiswaRepository) : ViewModel() {
@@ -51,4 +53,13 @@ fun InsertUiEvent.toMhs(): Mahasiswa = Mahasiswa(
 fun Mahasiswa.toUiStateMhs(): InsertUiState = InsertUiState(
     insertUiEvent =
     toInsertUiEvent()
+)
+
+fun Mahasiswa.toInsertUiEvent(): InsertUiEvent = InsertUiEvent(
+    nim = nim,
+    nama = nama,
+    alamat = alamat,
+    jenisKelamin = jenisKelamin,
+    kelas = kelas,
+    angkatan = angkatan
 )
