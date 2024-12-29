@@ -1,4 +1,4 @@
-package com.example.pertemuan12.entity
+package com.example.pertemuan12.data.entity
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

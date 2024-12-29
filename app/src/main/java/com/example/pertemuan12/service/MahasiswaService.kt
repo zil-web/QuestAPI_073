@@ -1,6 +1,6 @@
 package com.example.pertemuan12.service
 
-import com.example.pertemuan12.entity.Mahasiswa
+import com.example.pertemuan12.data.entity.Mahasiswa
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE

@@ -1,4 +1,4 @@
-package com.example.pertemuan12.navigasi
+package com.example.pertemuan12.ui.navigation
 
 interface
 DestinasiNavigasi {

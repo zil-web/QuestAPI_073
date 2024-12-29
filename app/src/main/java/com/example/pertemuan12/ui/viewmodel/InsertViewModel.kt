@@ -1,11 +1,11 @@
-package com.example.pertemuan12.viewmodel
+package com.example.pertemuan12.ui.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pertemuan12.entity.Mahasiswa
+import com.example.pertemuan12.data.entity.Mahasiswa
 import com.example.pertemuan12.repository.MahasiswaRepository
 import kotlinx.coroutines.launch
 
@@ -15,7 +15,8 @@ class InsertViewModel(private val mhs:
     mutableStateOf(InsertUiState())
         private set
     fun updateInsertMhsState(
-        insertUiEvent: InsertUiEvent) {
+        insertUiEvent: InsertUiEvent
+    ) {
         uiState = InsertUiState(insertUiEvent =
         insertUiEvent)
     }

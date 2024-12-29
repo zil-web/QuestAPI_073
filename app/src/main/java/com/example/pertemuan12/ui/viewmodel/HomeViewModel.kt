@@ -1,4 +1,4 @@
-package com.example.pertemuan12.viewmodel
+package com.example.pertemuan12.ui.viewmodel
 
 import android.net.http.HttpException
 import android.os.Build
@@ -8,7 +8,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pertemuan12.entity.Mahasiswa
+import com.example.pertemuan12.data.entity.Mahasiswa
 import com.example.pertemuan12.repository.MahasiswaRepository
 import kotlinx.coroutines.launch
 import java.io.IOException
