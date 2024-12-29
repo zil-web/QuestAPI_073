@@ -57,3 +57,48 @@ fun HomeScreen(
         )
     }
 }
+
+
+@Composable
+fun HomeStatus(
+    homeUiState: HomeUiState,
+    retryAction: () -> Unit,
+    modifier:
+    Modifier = Modifier,
+    onDeleteClick: (Mahasiswa) -> Unit = {},
+    onDetailClick: (String) -> Unit
+)
+{
+    when (
+        homeUiState) {
+        is HomeUiState.Loading -> OnLoading(modifier =
+        modifier.
+        fillMaxSize())
+        is HomeUiState.Success ->
+            if (
+                homeUiState.mahasiswa.isEmpty()){
+                return Box(modifier =
+                modifier.
+                fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Text(text = "Tidak ada data Kontak" )
+                }
+            }else {
+                MhsLayout(
+                    mahasiswa =
+                    homeUiState.mahasiswa, modifier =
+                    modifier.
+                    fillMaxWidth(),
+                    onDetailClick = {
+                        onDetailClick(it.nim)
+                    },
+                    onDeleteClick = {
+                        onDeleteClick(it)
+                    }
+                )
+            }
+        is HomeUiState.Error -> OnError(
+            retryAction, modifier =
+            modifier.
+            fillMaxSize())
+    }
+}
