@@ -1,5 +1,27 @@
 package com.example.pertemuan12.ui.View
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
+import androidx.compose.material3.Divider
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.dp
+import com.example.pertemuan12.ui.viewmodel.InsertUiEvent
+import com.example.pertemuan12.ui.viewmodel.InsertUiState
+import kotlinx.coroutines.launch
+import java.lang.reflect.Modifier
+
 object DestinasiEntry :
     DestinasiNavigasi {
     override val route = "item_entry"
@@ -20,7 +42,7 @@ fun EntryMhsScreen(
         modifier.
         nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            CostumeTopAppBar(
+            CostumeTopAppBar (
                 title = DestinasiEntry.titleRes,
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior,
@@ -49,6 +71,11 @@ fun EntryMhsScreen(
                 fillMaxWidth()
         )
     }
+}
+
+@Composable
+fun CostumeTopAppBar(title: String, canNavigateBack: Boolean, scrollBehavior: Any, navigateUp: () -> Unit) {
+
 }
 
 @Composable
