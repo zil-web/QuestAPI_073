@@ -1,4 +1,4 @@
-package com.example.pertemuan12.ui.viewmodel
+package com.example.pertemuan12.viewmodel
 
 import android.net.http.HttpException
 import android.os.Build

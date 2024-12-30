@@ -1,5 +1,6 @@
 package com.example.pertemuan12.repository
 
+
 import com.example.pertemuan12.data.entity.Mahasiswa
 import com.example.pertemuan12.service.MahasiswaService
 import java.io.IOException
@@ -9,7 +10,7 @@ interface MahasiswaRepository {
     suspend fun insertMahasiswa(mahasiswa: Mahasiswa)
     suspend fun updateMahasiswa(nim:String, mahasiswa: Mahasiswa)
     suspend fun deleteMahasiswa(nim: String)
-    suspend fun getMahasiswaByNim(nim: String): Mahasiswa
+    suspend fun getMahasiswaByNim(nim: String):Mahasiswa
 }
 
 class NetworkMahasiswaRepository(
@@ -43,5 +44,5 @@ class NetworkMahasiswaRepository(
 
     override suspend fun getMahasiswaByNim(nim: String): Mahasiswa {
         return  mahasiswaApiService.getMahasiswaByNim(nim)
-        }
+    }
 }

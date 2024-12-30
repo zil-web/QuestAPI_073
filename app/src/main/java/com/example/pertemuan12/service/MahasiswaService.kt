@@ -12,21 +12,22 @@ import retrofit2.http.Query
 
 interface MahasiswaService {
     @Headers(
-        "Accept: appplication/json",
+        "Accept: application/json",
         "Content-Type: application/json",
     )
-    @GET("bacaMahasiswa.php")
-    suspend fun getKontak(): List<Mahasiswa>
 
-    @GET("baca1Mahasiswa.php/{nim}")
-    suspend fun getKontakById(@Query("nim") nim:String) : Mahasiswa
+    @GET("bacamahasiswa.php")
+    suspend fun getMahasiswa() : List<Mahasiswa>
+
+    @GET("baca1mahaswia.php/{nim}")
+    suspend fun  getMahasiswaByNim(@Query("nim") nim:String):Mahasiswa
 
     @POST("insertmahasiswa.php")
-    suspend fun insertKontak(@Body mahasiswa: Mahasiswa)
+    suspend fun insertMahasiswa(@Body mahasiwa: Mahasiswa)
 
     @PUT("editmahasiswa.php/{nim}")
-    suspend fun updateKontak(@Query("nim")nim:String, @Body mahasiswa: Mahasiswa)
+    suspend fun updateMahasiswa(@Query("nim") nim: String, @Body mahasiwa: Mahasiswa)
 
     @DELETE("deletemahasiswa.php/{nim}")
-    suspend fun deleteKontak(@Query("nim") nim:String): Response<Void>
+    suspend fun deleteMahasiswa(@Query("nim") nim: String) : Response<Void>
 }
